@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Linking, Image} from 'react-native'
+import { StyleSheet, Text, View, Linking, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 
 export default function ActionCard() {
@@ -17,24 +17,93 @@ export default function ActionCard() {
         </View>
         <Image
         source={{
-            uri:'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            uri:'https://images.pexels.com/photos/19986476/pexels-photo-19986476/free-photo-of-a-window-with-red-shutters-on-a-stone-wall.jpeg'
         }}
         style={styles.cardImage}
         />
         <View style={styles.bodyContainer}>
             <Text numberOfLines={3}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies mi eget mauris pharetra et ultrices. Dignissim suspendisse in est ante. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. </Text>
+            
         </View>
+        <View style={styles.footerContainer}>
+                <TouchableOpacity
+                onPress={()=> onpenWebsite('https://roadmap.sh/') }
+                >
+                    <Text style={styles.socialLink}>Read more</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                onPress={()=> onpenWebsite('https://www.facebook.com/julio.adon/') }
+                >
+                    <Text style={styles.socialLink}>follow me on fb</Text>
+                </TouchableOpacity>
+        
+        
+        </View>
+      
+        
       </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-    headingText: {},
-    card: {},
-    elevatedCard:{},
-    headingContainer:{},
-    headerText:{},
-    cardImage:{},
-    bodyContainer:{}
+    headingText: {fontSize: 24,
+    fontWeight: 'bold',
+    paddingHorizontal: 8,
+    marginTop: 10,
+    marginBottom: 5
+    },
+    card: {
+        width: 350,
+        height: 370,
+        borderRadius: 10,
+        marginVertical: 12,
+        marginHorizontal: 16
+    },
+    elevatedCard:{
+        backgroundColor: '#e07c24',
+        elevation: 3,
+        shadowOffset: {
+            width: 1,
+            height: 1,
+        },
+        shadowColor: '#333',
+        shadowOpacity: 0.4
+    },
+    headingContainer:{
+        height: 40,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    headerText:{
+        color: '#000',
+        fontSize: 16,
+        fontWeight: '600'
+    }
+      
+    ,
+    cardImage:{
+        height: 200
+        
+    },
+    bodyContainer:{
+        padding: 10,
+    },
+    footerContainer:{
+     padding: 8, 
+     flexDirection: 'row',
+     alignItems: 'center',
+     justifyContent: 'space-evenly'
+
+    },
+    socialLink: {
+        fontSize: 16,
+        color: '#000000',
+        backgroundColor: '#fff',
+        paddingHorizontal: 5,
+        paddingVertical: 6,
+        borderRadius: 6
+
+    }
 })
